@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import TechStack from "./components/TechStack";
 import Footer from "./components/Footer";
+import ContactSection from "./components/ContactSection";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navigation />
       <Hero />
       <Projects />
+      <ContactSection />
       <TechStack />
       <Footer />
     </>
