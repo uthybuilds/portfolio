@@ -41,6 +41,15 @@ const Navigation = () => {
     });
   };
 
+  const closeMobileMenu = () => {
+    gsap.to(mobileMenuRef.current, {
+      x: "100%",
+      duration: 0.35,
+      ease: "power2.out",
+      onComplete: () => setIsMenuOpen(false),
+    });
+  };
+
   const menuItems = [
     { name: "Home", href: "/" },
     {
@@ -60,7 +69,7 @@ const Navigation = () => {
     },
     {
       name: "Github",
-      href: "https://github.com/Boygonecrypto",
+      href: "https://github.com/uthybuilds",
       external: true,
     },
     {
@@ -81,7 +90,7 @@ const Navigation = () => {
     <nav
       ref={navRef}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
-      style={{ backgroundColor: "rgba(255,255,255,0)" }} // start transparent
+      style={{ backgroundColor: "rgba(255,255,255,0)" }}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -112,7 +121,6 @@ const Navigation = () => {
             {menuItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.dropdown ? (
-                  // wrapper covers trigger + dropdown to avoid gap
                   <div
                     className="relative"
                     onMouseEnter={() => setActiveDropdown(item.name)}
@@ -127,7 +135,6 @@ const Navigation = () => {
                       <ChevronDown className="h-4 w-4" />
                     </span>
 
-                    {/* hover bridge to prevent accidental mouseout */}
                     {activeDropdown === item.name && (
                       <div
                         className="absolute top-full left-0 h-2 w-56"
@@ -135,7 +142,6 @@ const Navigation = () => {
                       />
                     )}
 
-                    {/* dropdown */}
                     {activeDropdown === item.name && (
                       <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 py-2 z-50">
                         {item.dropdown.map((sub, i) => (
@@ -144,7 +150,7 @@ const Navigation = () => {
                             href={sub.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={() => setActiveDropdown(null)} //  closes dropdown immediately
+                            onClick={() => setActiveDropdown(null)}
                             className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                             style={{ animationDelay: `${i * 0.03}s` }}
                           >
@@ -199,7 +205,6 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div
         ref={mobileMenuRef}
         className={`fixed top-0 right-0 w-full h-screen bg-white z-40 transform ${
@@ -232,7 +237,7 @@ const Navigation = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block text-gray-600 hover:text-blue-600 py-2"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={closeMobileMenu}
                       >
                         {sub.name}
                       </a>
@@ -245,7 +250,7 @@ const Navigation = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-xl font-medium text-gray-900 hover:text-blue-600 py-3 border-b border-gray-100"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   {item.name}
                 </a>
@@ -253,7 +258,7 @@ const Navigation = () => {
                 <a
                   href={item.href}
                   className="block text-xl font-medium text-gray-900 hover:text-blue-600 py-3 border-b border-gray-100"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   {item.name}
                 </a>
@@ -261,7 +266,7 @@ const Navigation = () => {
                 <Link
                   to={item.href}
                   className="block text-xl font-medium text-gray-900 hover:text-blue-600 py-3 border-b border-gray-100"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   {item.name}
                 </Link>
