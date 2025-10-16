@@ -28,7 +28,7 @@ const Footer = () => {
     },
     {
       icon: <FaGithub />,
-      link: "https://github.com/boygonecrypto", // GitHub
+      link: "https://github.com/uthybuilds", // GitHub
       color: "#FFFFFF",
       newTab: true,
     },
