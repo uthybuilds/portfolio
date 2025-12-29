@@ -41,20 +41,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative py-10 text-center text-white bg-black overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-90"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=1600&auto=format&fit=crop&q=80')",
-        }}
-      ></div>
-
-      {/* Overlay for text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/90"></div>
-
-      {/* Content */}
-      <div className="relative flex flex-col items-center justify-center space-y-6 z-10">
+    <footer className="py-10 text-center text-white bg-[#030014] border-t border-white/10">
+      <div className="flex flex-col items-center justify-center space-y-6">
         {/* Social Icons */}
         <div className="flex flex-wrap justify-center gap-6">
           {socials.map((social, index) => (
@@ -65,8 +53,7 @@ const Footer = () => {
                 target: "_blank",
                 rel: "noopener noreferrer",
               })}
-              className="text-3xl transition-transform duration-300 hover:scale-125"
-              style={{ color: social.color }}
+              className="text-2xl text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110"
             >
               {social.icon}
             </a>
@@ -74,7 +61,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <p className="text-gray-400 text-sm sm:text-base">
+        <p className="text-gray-500 text-sm">
           ©️ 2025 Uthman Ajanaku. All Rights Reserved.
         </p>
       </div>
