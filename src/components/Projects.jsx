@@ -6,7 +6,7 @@ import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 
 import Clion from "../assets/Clion.jpeg";
-import Devtide from "../assets/Devtide.png";
+import Devtide from "../assets/Devtide.jpeg";
 import Pinkerton from "../assets/Pinkerton.jpeg";
 import Toriigate from "../assets/Toriigate.jpeg";
 
@@ -65,7 +65,7 @@ const FeaturedProjects = () => {
             trigger: sectionRef.current,
             start: "top 80%",
           },
-        }
+        },
       );
     }, sectionRef);
 
