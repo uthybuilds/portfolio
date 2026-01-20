@@ -6,7 +6,7 @@ import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 
 import Clion from "../assets/Clion.jpeg";
-import Devtide from "../assets/Devtide.jpeg";
+import Devtide from "../assets/Devtide.png";
 import Pinkerton from "../assets/Pinkerton.jpeg";
 import Toriigate from "../assets/Toriigate.jpeg";
 
