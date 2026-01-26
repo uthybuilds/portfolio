@@ -70,14 +70,14 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-10 h-10 bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300 group-hover:border-white/20 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.15)]">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="font-serif text-xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-blue-400 to-purple-500">
+            <div className="relative flex items-center justify-center w-10 h-10 bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300 group-hover:border-white/20 group-hover:shadow-[0_0_15px_rgba(136,64,48,0.3)]">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#884030]/20 to-[#c25e48]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="font-serif text-xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#884030] to-[#c25e48]">
                 U
               </span>
             </div>
             <span className="text-lg font-medium tracking-tight text-gray-200 group-hover:text-white transition-colors duration-300">
-              Uthman<span className="text-purple-500">.</span>
+              Uthman<span className="text-[#884030]">.</span>
             </span>
           </Link>
 
@@ -154,7 +154,7 @@ const Navigation = () => {
           {/* Mobile Toggle */}
           <button
             onClick={toggleMobileMenu}
-            className="lg:hidden p-2 text-white hover:text-blue-400 transition-colors"
+            className="lg:hidden p-2 text-white hover:text-[#c25e48] transition-colors"
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -180,7 +180,7 @@ const Navigation = () => {
                       href={sub.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-lg text-white hover:text-blue-400"
+                      className="text-lg text-white hover:text-[#c25e48]"
                       onClick={closeMobileMenu}
                     >
                       {sub.name}
@@ -190,7 +190,7 @@ const Navigation = () => {
               ) : (
                 <a
                   href={item.href}
-                  className="block text-3xl font-bold text-white hover:text-blue-400 transition-colors"
+                  className="block text-3xl font-bold text-white hover:text-[#c25e48] transition-colors"
                   onClick={closeMobileMenu}
                 >
                   {item.name}

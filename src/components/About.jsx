@@ -13,18 +13,18 @@ const About = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".about-content",
-        { y: 50, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 1,
           stagger: 0.1,
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 70%",
           },
-        }
+        },
       );
     }, sectionRef);
 
@@ -32,30 +32,28 @@ const About = () => {
   }, []);
 
   const features = [
-    { icon: <Code2 className="text-blue-400" />, text: "Clean Code" },
-    { icon: <Globe className="text-purple-400" />, text: "Scalable" },
-    { icon: <Cpu className="text-pink-400" />, text: "Performant" },
-    { icon: <Layers className="text-teal-400" />, text: "Modern Stack" },
+    { icon: <Code2 className="text-white" />, text: "Clean Code" },
+    { icon: <Globe className="text-gray-400" />, text: "Scalable" },
+    { icon: <Cpu className="text-white" />, text: "Performant" },
+    { icon: <Layers className="text-gray-400" />, text: "Modern Stack" },
   ];
 
   return (
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-32 bg-[#030014] overflow-hidden"
+      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column: Text */}
-          <div className="about-content space-y-8 order-2 lg:order-1">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+          <div className="about-content space-y-10 order-2 lg:order-1">
+            <h2 className="text-4xl sm:text-6xl font-bold text-white leading-tight font-serif">
               Designing with purpose, <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-                building for impact.
-              </span>
+              <span className="italic text-gray-400">building for impact.</span>
             </h2>
 
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-gray-400 text-lg leading-relaxed font-light">
               I focus on turning complex ideas into intuitive digital
               experiences that feel effortless to use. My work blends creativity
               with precision, balancing clean design with powerful
@@ -67,10 +65,10 @@ const About = () => {
               {features.map((feature, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-3 bg-white/5 border border-white/10 p-4 rounded-xl"
+                  className="flex items-center gap-4 border-l border-[#884030]/30 pl-4 hover:border-[#c25e48] transition-colors py-2"
                 >
                   {feature.icon}
-                  <span className="text-gray-200 font-medium">
+                  <span className="text-gray-200 font-medium tracking-wide uppercase text-sm">
                     {feature.text}
                   </span>
                 </div>
@@ -81,11 +79,11 @@ const About = () => {
           {/* Right Column: Image */}
           <div className="about-content order-1 lg:order-2 flex justify-center lg:justify-end relative">
             <div className="relative w-80 h-80 sm:w-96 sm:h-96">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
+              <div className="absolute inset-0 bg-[#884030]/10 rounded-none blur-3xl opacity-20"></div>
               <img
                 src={ProfilePic}
                 alt="Profile"
-                className="relative w-full h-full object-cover rounded-3xl border-2 border-white/10 shadow-2xl rotate-3 hover:rotate-0 transition-all duration-500"
+                className="relative w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out"
               />
             </div>
           </div>

@@ -23,6 +23,7 @@ const FeaturedProjects = () => {
         "A fullstack personal blogging platform designed to document my growth in tech. Features user engagement via comments and a clean reading experience.",
       tech: [FaReact, SiTailwindcss, FaNodeJs],
       liveLink: "https://devtide-frontend.vercel.app/",
+      repoLink: "https://github.com/uthybuilds/BlogSphere-Backend",
     },
     {
       title: "Clion",
@@ -31,6 +32,7 @@ const FeaturedProjects = () => {
         "A modern frontend website focused on sleek UI design, responsiveness, and high performance, delivering a clean and engaging user experience.",
       tech: [FaReact, SiTailwindcss],
       liveLink: "https://clion-eta.vercel.app/",
+      repoLink: "https://github.com/uthybuilds/Clion",
     },
     {
       title: "Torii Gate",
@@ -39,6 +41,7 @@ const FeaturedProjects = () => {
         "Real estate platform simplifying property management. Connects owners and hunters directly with smooth communication and vetting tools.",
       tech: [FaReact, SiTailwindcss, FaNodeJs],
       liveLink: "https://torri-gate-frontend-ten.vercel.app/",
+      repoLink: "https://github.com/uthybuilds/torii-gate-backend",
     },
     {
       title: "Pinkerton Construction",
@@ -47,6 +50,7 @@ const FeaturedProjects = () => {
         "Premium renovation services website for a construction company based in Dumas, Texas. Showcases services and portfolio.",
       tech: [FaReact, SiTailwindcss],
       liveLink: "https://www.pinkertoncontruction.com/",
+      repoLink: "https://github.com/uthybuilds/Pinkerton",
     },
   ];
 
@@ -108,7 +112,7 @@ const FeaturedProjects = () => {
               {/* Content */}
               <div className="p-8">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-[#c25e48] transition-colors">
                     {project.title}
                   </h3>
                   <div className="flex gap-3">
@@ -127,9 +131,17 @@ const FeaturedProjects = () => {
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-blue-400 transition-colors"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-[#c25e48] transition-colors"
                   >
                     View Project <ExternalLink size={16} />
+                  </a>
+                  <a
+                    href={project.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-[#c25e48] transition-colors"
+                  >
+                    View Code <Github size={16} />
                   </a>
                 </div>
               </div>

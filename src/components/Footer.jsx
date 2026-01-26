@@ -41,7 +41,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-10 text-center text-white bg-[#030014] border-t border-white/10">
+    <footer className="py-10 text-center text-white bg-[#030014] border-t border-[#884030]/20">
       <div className="flex flex-col items-center justify-center space-y-6">
         {/* Social Icons */}
         <div className="flex flex-wrap justify-center gap-6">

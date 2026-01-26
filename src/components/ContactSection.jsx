@@ -13,7 +13,7 @@ const Contact = () => {
         "service_15q69dl",
         "template_trei7dq",
         form.current,
-        "2ut3yuau_EJ6W2z94"
+        "2ut3yuau_EJ6W2z94",
       )
       .then(
         () => {
@@ -23,33 +23,33 @@ const Contact = () => {
         (error) => {
           console.log(error.text);
           alert("Failed to send message. Try again.");
-        }
+        },
       );
   };
 
   return (
     <section
       id="contact"
-      className="relative py-24 px-6 bg-black text-white overflow-hidden"
+      className="relative py-24 px-6 bg-[#0a0a0a] text-white overflow-hidden"
     >
       {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-80"
+        className="absolute inset-0 bg-cover bg-center opacity-30 grayscale"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=1600&auto=format&fit=crop&q=80')",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/90" />
+      <div className="absolute inset-0 bg-[#0a0a0a]/90" />
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 px-4 sm:px-6 lg:px-8">
         {/* Form */}
-        <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            Send a Message
+        <div className="bg-transparent border border-white/10 p-10 rounded-none shadow-none">
+          <h2 className="text-4xl font-bold mb-10 text-left font-serif italic text-white">
+            Get in Touch
           </h2>
-          <form ref={form} onSubmit={sendEmail} className="space-y-6">
+          <form ref={form} onSubmit={sendEmail} className="space-y-8">
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-300">
                 Name
@@ -59,7 +59,7 @@ const Contact = () => {
                 name="user_name"
                 required
                 placeholder="Enter your name"
-                className="w-full px-4 py-3 rounded-md bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                className="w-full px-4 py-3 rounded-md bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#c25e48] transition"
               />
             </div>
 
@@ -72,7 +72,7 @@ const Contact = () => {
                 name="user_email"
                 required
                 placeholder="Enter your email"
-                className="w-full px-4 py-3 rounded-md bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                className="w-full px-4 py-3 rounded-md bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#c25e48] transition"
               />
             </div>
 
@@ -85,13 +85,13 @@ const Contact = () => {
                 required
                 placeholder="Write your message..."
                 rows="5"
-                className="w-full px-4 py-3 rounded-md bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                className="w-full px-4 py-3 rounded-md bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#c25e48] transition"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition-all cursor-pointer"
+              className="w-full py-4 bg-white text-black font-medium tracking-wide text-sm uppercase hover:bg-gray-200 transition-all cursor-pointer mt-4"
             >
               Send Message
             </button>
@@ -99,49 +99,36 @@ const Contact = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg flex flex-col justify-center">
-          <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
+        <div className="flex flex-col justify-center space-y-12 pl-0 lg:pl-10 pt-10 lg:pt-0">
+          <div className="space-y-2">
+            <p className="text-sm text-gray-500 uppercase tracking-widest">
+              Email
+            </p>
+            <p className="text-2xl font-serif text-white">
+              uthmanajanaku@gmail.com
+            </p>
+          </div>
 
-          <div className="space-y-6 text-gray-300">
-            <div className="flex items-center gap-3">
-              <Phone className="text-blue-400" />
-              <p>
-                <span className="block text-yellow-400 font-semibold">
-                  Phone
-                </span>
-                (+234) 703 773 0858
-              </p>
-            </div>
+          <div className="space-y-2">
+            <p className="text-sm text-gray-500 uppercase tracking-widest">
+              Phone
+            </p>
+            <p className="text-2xl font-serif text-white">
+              (+234) 703 773 0858
+            </p>
+          </div>
 
-            <div className="flex items-center gap-3">
-              <Mail className="text-blue-400" />
-              <p>
-                <span className="block text-yellow-400 font-semibold">
-                  Email
-                </span>
-                uthmanajanaku@gmail.com
-              </p>
-            </div>
+          <div className="space-y-2">
+            <p className="text-sm text-gray-500 uppercase tracking-widest">
+              Based In
+            </p>
+            <p className="text-2xl font-serif text-white">Lagos, Nigeria</p>
+          </div>
 
-            <div className="flex items-center gap-3">
-              <MapPin className="text-blue-400" />
-              <p>
-                <span className="block text-yellow-400 font-semibold">
-                  Address
-                </span>
-                Lagos, Nigeria
-              </p>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <Clock className="text-blue-400" />
-              <p>
-                <span className="block text-yellow-400 font-semibold">
-                  Availability
-                </span>
-                Available 24/7
-              </p>
-            </div>
+          <div className="pt-10 border-t border-white/10">
+            <p className="text-gray-500 text-sm">
+              Available for freelance projects and full-time opportunities.
+            </p>
           </div>
         </div>
       </div>
