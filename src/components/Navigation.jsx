@@ -43,6 +43,11 @@ const Navigation = () => {
     {
       name: "Portfolio",
       dropdown: [
+        { name: "KanFlow", href: "https://kanflow-indol.vercel.app/" },
+        {
+          name: "ResumeAI",
+          href: "https://resumebuilderbyuthy.vercel.app/",
+        },
         { name: "Devtide", href: "https://devtide-frontend.vercel.app/" },
         {
           name: "Torii Gate",

@@ -9,6 +9,9 @@ import Clion from "../assets/Clion.jpeg";
 import Devtide from "../assets/Devtide.jpeg";
 import Pinkerton from "../assets/Pinkerton.jpeg";
 import Toriigate from "../assets/Toriigate.jpeg";
+import KanFlowWeb from "../assets/KanFlow Web.png";
+import KanFlowApp from "../assets/KanFlow App.jpeg";
+import ResumeAi from "../assets/ResumeAi.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +19,26 @@ const FeaturedProjects = () => {
   const sectionRef = useRef(null);
 
   const projects = [
+    {
+      title: "KanFlow",
+      image: KanFlowWeb,
+      secondaryImage: KanFlowApp,
+      isComposite: true,
+      description:
+        "A cross-platform productivity ecosystem that seamlessly syncs tasks between a mobile app and web dashboard in real-time. Features offline support and integrations with GitHub and Slack.",
+      tech: [FaReact, SiTailwindcss, FaNodeJs],
+      liveLink: "https://kanflow-indol.vercel.app/",
+      repoLink: "https://github.com/uthybuilds/Kanflow",
+    },
+    {
+      title: "ResumeAI",
+      image: ResumeAi,
+      description:
+        "An AI-powered resume creation platform that uses Google Gemini to enhance professional summaries and job descriptions. Features multiple ATS-friendly templates, real-time preview, and PDF export.",
+      tech: [FaReact, SiTailwindcss, FaNodeJs],
+      liveLink: "https://resumebuilderbyuthy.vercel.app/",
+      repoLink: "https://github.com/uthybuilds/Resumebuilder-Backend",
+    },
     {
       title: "DevTide",
       image: Devtide,
@@ -107,6 +130,13 @@ const FeaturedProjects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
                 />
+                {project.isComposite && project.secondaryImage && (
+                  <img
+                    src={project.secondaryImage}
+                    alt={`${project.title} Mobile App`}
+                    className="absolute -bottom-[10%] right-4 w-[28%] h-auto object-contain shadow-2xl border-[3px] border-zinc-900/80 rounded-[1.5rem] z-20 group-hover:scale-105 group-hover:bottom-4 transition-all duration-500 ease-out"
+                  />
+                )}
               </div>
 
               {/* Content */}
