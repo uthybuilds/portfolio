@@ -57,7 +57,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-gray-500 text-sm">
-          © 2025 Uthman Ajanaku. All Rights Reserved.
+          © 2026 Uthman Ajanaku. All Rights Reserved.
         </p>
       </div>
     </footer>
