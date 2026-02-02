@@ -18,77 +18,66 @@ const TechStack = () => {
 
   useEffect(() => {
     gsap.fromTo(
-      iconsRef.current,
-      { opacity: 0, scale: 0.8, y: 20 },
+      ".tech-icon",
+      { opacity: 0, scale: 0.5, y: 20 },
       {
         opacity: 1,
         scale: 1,
         y: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power2.out",
+        duration: 0.6,
+        stagger: 0.05,
+        ease: "back.out(1.7)",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
         },
       }
     );
-    iconsRef.current.forEach((icon) => {
-      gsap.to(icon, {
-        rotation: 360,
-        duration: 20,
-        repeat: -1,
-        ease: "linear",
-      });
-    });
   }, []);
 
   const techStack = [
-    { icon: FaReact, color: "#61DAFB" },
-    { icon: SiTailwindcss, color: "#38BDF8" },
-    { icon: FaNodeJs, color: "#3C873A" },
-    { icon: SiExpress, color: "#FFFFFF" },
-    { icon: FaHtml5, color: "#E34F26" },
-    { icon: FaJsSquare, color: "#F7DF1E" },
-    { icon: FaGitAlt, color: "#F05033" },
-    { icon: SiVite, color: "#646CFF" },
+    { icon: FaReact, name: "React", color: "#61DAFB", bg: "bg-[#1c1c1e]" },
+    { icon: SiTailwindcss, name: "Tailwind", color: "#38BDF8", bg: "bg-[#1c1c1e]" },
+    { icon: FaNodeJs, name: "Node.js", color: "#3C873A", bg: "bg-[#1c1c1e]" },
+    { icon: SiExpress, name: "Express", color: "#FFFFFF", bg: "bg-[#1c1c1e]" },
+    { icon: FaHtml5, name: "HTML5", color: "#E34F26", bg: "bg-[#1c1c1e]" },
+    { icon: FaJsSquare, name: "JavaScript", color: "#F7DF1E", bg: "bg-[#1c1c1e]" },
+    { icon: FaGitAlt, name: "Git", color: "#F05033", bg: "bg-[#1c1c1e]" },
+    { icon: SiVite, name: "Vite", color: "#646CFF", bg: "bg-[#1c1c1e]" },
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="relative py-20 bg-black  text-white text-center overflow-hidden"
+      className="relative py-32 bg-black text-white overflow-hidden font-sf"
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-80"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=1600&auto=format&fit=crop&q=80')",
-        }}
-      ></div>
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
+            Tech Stack
+            </h2>
+            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-normal">
+            My digital toolbox.
+            </p>
+        </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/90"></div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-          Tech Stack
-        </h2>
-        <p className="text-gray-400 sm:text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-          Tools and technologies I use to design, build, and deploy exceptional
-          digital experiences.
-        </p>
-
-        {/* Tech Icons */}
-        <div className="flex flex-wrap justify-center gap-10 sm:gap-16">
-          {techStack.map(({ icon: Icon, color }, i) => (
+        {/* App Icon Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-10 max-w-4xl mx-auto">
+          {techStack.map(({ icon: Icon, color, name, bg }, i) => (
             <div
               key={i}
-              ref={(el) => (iconsRef.current[i] = el)}
-              className="text-6xl sm:text-7xl md:text-8xl"
-              style={{ color }}
+              className="tech-icon flex flex-col items-center gap-3 group"
             >
-              <Icon />
+                {/* App Icon Shape */}
+              <div 
+                className={`w-20 h-20 sm:w-24 sm:h-24 ${bg} rounded-[22px] flex items-center justify-center shadow-lg border border-white/5 transition-transform duration-300 group-hover:scale-110 active:scale-95`}
+              >
+                <Icon className="text-4xl sm:text-5xl" style={{ color }} />
+              </div>
+              {/* App Label */}
+              <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
+                  {name}
+              </span>
             </div>
           ))}
         </div>

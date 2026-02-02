@@ -103,75 +103,72 @@ const FeaturedProjects = () => {
     <section
       id="projects"
       ref={sectionRef}
-      className="relative py-32 px-6 bg-[#030014] overflow-hidden"
+      className="relative py-32 px-4 bg-[#000000] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Featured Projects
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-16 flex flex-col items-start">
+          <span className="text-blue-500 font-bold tracking-widest text-sm uppercase mb-2">Portfolio</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Selected Work
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl">
-            A selection of projects that showcase my passion for building
-            scalable and user-centric applications.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="project-card group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300"
+              className="project-card ios-card group relative bg-[#1c1c1e] rounded-[32px] overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/50 border border-white/5 flex flex-col h-full"
             >
               {/* Image Container */}
-              <div className="relative h-64 overflow-hidden">
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all z-10" />
+              <div className="relative h-[400px] w-full overflow-hidden bg-gray-900">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1c1c1e] opacity-60 z-10" />
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
+                
+                {/* Composite Logic for Kanflow */}
                 {project.isComposite && project.secondaryImage && (
                   <img
                     src={project.secondaryImage}
                     alt={`${project.title} Mobile App`}
-                    className="absolute -bottom-[10%] right-4 w-[28%] h-auto object-contain shadow-2xl border-[3px] border-zinc-900/80 rounded-[1.5rem] z-20 group-hover:scale-105 group-hover:bottom-4 transition-all duration-500 ease-out"
+                    className="absolute -bottom-[15%] -right-[5%] w-[45%] h-auto object-contain shadow-2xl border-[4px] border-[#1c1c1e] rounded-[24px] z-20 group-hover:scale-105 group-hover:-bottom-[10%] transition-all duration-500 ease-out rotate-[-5deg] group-hover:rotate-0"
                   />
                 )}
               </div>
 
-              {/* Content */}
-              <div className="p-8">
+              {/* Content - iOS App Store Style */}
+              <div className="p-8 flex flex-col flex-grow relative z-20 -mt-20 bg-gradient-to-t from-[#1c1c1e] via-[#1c1c1e] to-transparent pt-20">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-[#c25e48] transition-colors">
-                    {project.title}
-                  </h3>
-                  <div className="flex gap-3">
-                    {project.tech.map((Icon, i) => (
-                      <Icon key={i} className="text-gray-400 text-xl" />
-                    ))}
+                  <div>
+                    <span className="text-blue-400 text-xs font-bold tracking-wider uppercase mb-1 block">Featured App</span>
+                    <h3 className="text-3xl font-bold text-white mb-2">
+                      {project.title}
+                    </h3>
                   </div>
                 </div>
 
-                <p className="text-gray-400 leading-relaxed mb-8">
+                <p className="text-gray-400 text-lg leading-relaxed mb-8 font-medium line-clamp-3">
                   {project.description}
                 </p>
 
-                <div className="flex items-center gap-4">
+                <div className="mt-auto flex items-center gap-4">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-[#c25e48] transition-colors"
+                    className="flex-1 py-3.5 bg-white/10 hover:bg-white text-white hover:text-black rounded-full font-bold text-center transition-all backdrop-blur-md"
                   >
-                    View Project <ExternalLink size={16} />
+                    View App
                   </a>
                   <a
                     href={project.repoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-[#c25e48] transition-colors"
+                    className="p-3.5 bg-[#2c2c2e] hover:bg-[#3a3a3c] rounded-full text-white transition-all"
                   >
-                    View Code <Github size={16} />
+                    <Github size={24} />
                   </a>
                 </div>
               </div>

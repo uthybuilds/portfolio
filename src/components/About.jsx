@@ -12,17 +12,18 @@ const About = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ".about-content",
-        { y: 30, opacity: 0 },
+        ".about-widget",
+        { y: 50, opacity: 0, scale: 0.95 },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          stagger: 0.1,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.2,
           ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 70%",
+            start: "top 75%",
           },
         },
       );
@@ -32,28 +33,47 @@ const About = () => {
   }, []);
 
   const features = [
-    { icon: <Code2 className="text-white" />, text: "Clean Code" },
-    { icon: <Globe className="text-gray-400" />, text: "Scalable" },
-    { icon: <Cpu className="text-white" />, text: "Performant" },
-    { icon: <Layers className="text-gray-400" />, text: "Modern Stack" },
+    {
+      icon: <Code2 className="text-white w-6 h-6" />,
+      text: "Clean Code",
+      color: "bg-blue-500",
+    },
+    {
+      icon: <Globe className="text-white w-6 h-6" />,
+      text: "Scalable",
+      color: "bg-green-500",
+    },
+    {
+      icon: <Cpu className="text-white w-6 h-6" />,
+      text: "Performant",
+      color: "bg-orange-500",
+    },
+    {
+      icon: <Layers className="text-white w-6 h-6" />,
+      text: "Modern Stack",
+      color: "bg-purple-500",
+    },
   ];
 
   return (
     <section
       id="about"
       ref={sectionRef}
-      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
+      className="relative py-32 bg-black overflow-hidden font-sf"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column: Text */}
-          <div className="about-content space-y-10 order-2 lg:order-1">
-            <h2 className="text-4xl sm:text-6xl font-bold text-white leading-tight font-serif">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Left Column: Text Widget */}
+          <div className="about-widget lg:col-span-7 bg-[#1c1c1e] rounded-[32px] p-8 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden group">
+            {/* Glossy Effect */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
               Designing with purpose, <br />
-              <span className="italic text-gray-400">building for impact.</span>
+              <span className="text-[#007AFF]">building for impact.</span>
             </h2>
 
-            <p className="text-gray-400 text-lg leading-relaxed font-light">
+            <p className="text-gray-400 text-lg leading-relaxed font-normal mb-8">
               I focus on turning complex ideas into intuitive digital
               experiences that feel effortless to use. My work blends creativity
               with precision, balancing clean design with powerful
@@ -61,14 +81,16 @@ const About = () => {
               to solve real problems and bring value to users.
             </p>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {features.map((feature, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-4 border-l border-[#884030]/30 pl-4 hover:border-[#c25e48] transition-colors py-2"
+                  className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl hover:bg-white/10 transition-colors duration-300"
                 >
-                  {feature.icon}
-                  <span className="text-gray-200 font-medium tracking-wide uppercase text-sm">
+                  <div className={`p-2 rounded-xl ${feature.color} shadow-lg`}>
+                    {feature.icon}
+                  </div>
+                  <span className="text-white font-medium text-base">
                     {feature.text}
                   </span>
                 </div>
@@ -76,15 +98,23 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Column: Image */}
-          <div className="about-content order-1 lg:order-2 flex justify-center lg:justify-end relative">
-            <div className="relative w-80 h-80 sm:w-96 sm:h-96">
-              <div className="absolute inset-0 bg-[#884030]/10 rounded-none blur-3xl opacity-20"></div>
+          {/* Right Column: Image Widget */}
+          <div className="about-widget lg:col-span-5 h-full min-h-[400px] lg:min-h-0 relative">
+            <div className="w-full h-full bg-[#1c1c1e] rounded-[32px] overflow-hidden border border-white/5 shadow-2xl relative group">
               <img
                 src={ProfilePic}
                 alt="Profile"
-                className="relative w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-4">
+                  <p className="text-white font-medium">Uthman Ajanaku</p>
+                  <p className="text-white/60 text-sm">Full Stack Developer</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

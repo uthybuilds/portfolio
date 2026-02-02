@@ -30,54 +30,48 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative py-24 px-6 bg-[#0a0a0a] text-white overflow-hidden"
+      className="relative py-32 px-6 bg-black text-white overflow-hidden font-sf"
     >
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-30 grayscale"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=1600&auto=format&fit=crop&q=80')",
-        }}
-      />
-      <div className="absolute inset-0 bg-[#0a0a0a]/90" />
+      <div className="relative max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Get in Touch</h2>
+            <p className="text-gray-400">Let's build something amazing together.</p>
+        </div>
 
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 px-4 sm:px-6 lg:px-8">
-        {/* Form */}
-        <div className="bg-transparent border border-white/10 p-10 rounded-none shadow-none">
-          <h2 className="text-4xl font-bold mb-10 text-left font-serif italic text-white">
-            Get in Touch
-          </h2>
-          <form ref={form} onSubmit={sendEmail} className="space-y-8">
+        {/* Form Widget */}
+        <div className="bg-[#1c1c1e] p-8 md:p-12 rounded-[32px] shadow-2xl border border-white/5 relative overflow-hidden">
+             {/* Glossy Effect */}
+             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+             
+          <form ref={form} onSubmit={sendEmail} className="space-y-6 relative z-10">
             <div>
-              <label className="block mb-2 text-sm font-medium text-gray-300">
+              <label className="block mb-2 text-sm font-medium text-gray-400 ml-1 uppercase tracking-wider">
                 Name
               </label>
               <input
                 type="text"
                 name="user_name"
                 required
-                placeholder="Enter your name"
-                className="w-full px-4 py-3 rounded-md bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#c25e48] transition"
+                placeholder="John Doe"
+                className="w-full px-5 py-4 rounded-2xl bg-[#2c2c2e] border-none text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF] transition-all"
               />
             </div>
 
             <div>
-              <label className="block mb-2 text-sm font-medium text-gray-300">
+              <label className="block mb-2 text-sm font-medium text-gray-400 ml-1 uppercase tracking-wider">
                 Email
               </label>
               <input
                 type="email"
                 name="user_email"
                 required
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 rounded-md bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#c25e48] transition"
+                placeholder="john@example.com"
+                className="w-full px-5 py-4 rounded-2xl bg-[#2c2c2e] border-none text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF] transition-all"
               />
             </div>
 
             <div>
-              <label className="block mb-2 text-sm font-medium text-gray-300">
+              <label className="block mb-2 text-sm font-medium text-gray-400 ml-1 uppercase tracking-wider">
                 Message
               </label>
               <textarea
@@ -85,51 +79,17 @@ const Contact = () => {
                 required
                 placeholder="Write your message..."
                 rows="5"
-                className="w-full px-4 py-3 rounded-md bg-black/40 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#c25e48] transition"
+                className="w-full px-5 py-4 rounded-2xl bg-[#2c2c2e] border-none text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#007AFF] transition-all resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-4 bg-white text-black font-medium tracking-wide text-sm uppercase hover:bg-gray-200 transition-all cursor-pointer mt-4"
+              className="w-full py-4 bg-[#007AFF] text-white font-semibold text-lg rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer shadow-lg shadow-[#007AFF]/30"
             >
               Send Message
             </button>
           </form>
-        </div>
-
-        {/* Contact Info */}
-        <div className="flex flex-col justify-center space-y-12 pl-0 lg:pl-10 pt-10 lg:pt-0">
-          <div className="space-y-2">
-            <p className="text-sm text-gray-500 uppercase tracking-widest">
-              Email
-            </p>
-            <p className="text-2xl font-serif text-white">
-              uthmanajanaku@gmail.com
-            </p>
-          </div>
-
-          <div className="space-y-2">
-            <p className="text-sm text-gray-500 uppercase tracking-widest">
-              Phone
-            </p>
-            <p className="text-2xl font-serif text-white">
-              (+234) 703 773 0858
-            </p>
-          </div>
-
-          <div className="space-y-2">
-            <p className="text-sm text-gray-500 uppercase tracking-widest">
-              Based In
-            </p>
-            <p className="text-2xl font-serif text-white">Lagos, Nigeria</p>
-          </div>
-
-          <div className="pt-10 border-t border-white/10">
-            <p className="text-gray-500 text-sm">
-              Available for freelance projects and full-time opportunities.
-            </p>
-          </div>
         </div>
       </div>
     </section>
