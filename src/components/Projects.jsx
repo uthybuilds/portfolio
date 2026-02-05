@@ -109,7 +109,7 @@ const FeaturedProjects = () => {
         <div className="mb-16 flex flex-col items-start">
           <span className="text-blue-500 font-bold tracking-widest text-sm uppercase mb-2">Portfolio</span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Selected Work
+            Selected Web & Mobile Work
           </h2>
         </div>
 

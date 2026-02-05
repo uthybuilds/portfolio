@@ -75,10 +75,11 @@ const About = () => {
 
             <p className="text-gray-400 text-lg leading-relaxed font-normal mb-8">
               I focus on turning complex ideas into intuitive digital
-              experiences that feel effortless to use. My work blends creativity
-              with precision, balancing clean design with powerful
-              functionality. Every line of code I write is guided by intention
-              to solve real problems and bring value to users.
+              experiences across web and mobile platforms that feel effortless
+              to use. My work blends creativity with precision, balancing clean
+              design with powerful functionality. Every line of code I write is
+              guided by intention to solve real problems and bring value to
+              users.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
